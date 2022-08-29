@@ -10,8 +10,17 @@ import UIKit
 
 class FilmViewController : UIViewController {
     
+    private var mFilmViewModel: FilmViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.mFilmViewModel = FilmViewModel(filmRepository: FilmRepository(filmService: FilmService()))
+        self.mFilmViewModel.bindFilmViewModelToController = {
+            
+        }
+        
+        self.mFilmViewModel.getDiscoverFilm()
     }
     
 }
