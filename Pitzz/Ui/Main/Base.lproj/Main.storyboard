@@ -16,24 +16,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rww-dg-3dU">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rww-dg-3dU">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Gbb-Qq-J3d"/>
+                                    <constraint firstAttribute="width" constant="414" id="q1N-oz-CFU"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Film" id="MjL-zT-qIm">
                                         <color key="tintColor" systemColor="labelColor"/>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="NSt-kU-kff">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="H35-Tu-wDt"/>
+                                    <constraint firstAttribute="height" constant="725" id="aRM-vV-Zwu"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NSt-kU-kff" firstAttribute="top" secondItem="Rww-dg-3dU" secondAttribute="bottom" id="4z9-bQ-vDG"/>
+                            <constraint firstItem="Rww-dg-3dU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9f9-yg-Iob"/>
+                            <constraint firstItem="NSt-kU-kff" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="LIB-YK-zRW"/>
+                            <constraint firstItem="Rww-dg-3dU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="O17-sK-978"/>
+                            <constraint firstItem="NSt-kU-kff" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="V3M-A3-YKh"/>
+                            <constraint firstItem="Rww-dg-3dU" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="qFc-iR-ybI"/>
+                            <constraint firstItem="NSt-kU-kff" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="xi0-8k-EVI"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Film" image="film" catalog="system" id="iJm-VS-NL2"/>
+                    <connections>
+                        <outlet property="tableView" destination="NSt-kU-kff" id="Lb9-mD-sgb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986" y="-636"/>
+            <point key="canvasLocation" x="985.50724637681162" y="-636.16071428571422"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BC1-q8-VVB">
@@ -41,6 +64,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gRk-rW-zsP" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fvX-8I-3NI">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
