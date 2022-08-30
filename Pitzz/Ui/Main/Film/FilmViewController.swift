@@ -15,12 +15,12 @@ class FilmViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.mFilmViewModel = FilmViewModel(filmRepository: FilmRepository(filmService: FilmService()))
+        self.mFilmViewModel = FilmViewModel(filmRepository: FilmRepository(filmService: FilmService(apiClient: ApiClient())))
         self.mFilmViewModel.bindFilmViewModelToController = {
             
         }
         
-        self.mFilmViewModel.getDiscoverFilm()
+        self.mFilmViewModel.getDiscoverMovie()
     }
     
 }

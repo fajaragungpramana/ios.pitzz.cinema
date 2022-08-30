@@ -6,11 +6,18 @@
 //
 
 import Alamofire
+import RxSwift
 
 class FilmService {
     
-    func discoverMovie(parameters: Parameters) -> DataRequest {
-        return AF.request(AppRoute.discoverMovie(params: parameters))
+    private var mApiClient: ApiClient
+    
+    init(apiClient: ApiClient) {
+        self.mApiClient = apiClient
+    }
+    
+    func discoverMovie(parameters: Parameters?) -> Observable<AppResponseList<Film>> {
+        return mApiClient.request(ApiRoute.discoverMovie(params: parameters))
     }
     
 }

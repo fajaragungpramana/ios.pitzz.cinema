@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct AppResponseList<T : Decodable> : Decodable {
+struct AppResponseList<T : Codable> : Codable {
     var results: [T]? = nil
     
     enum CodingKeys : String, CodingKey {

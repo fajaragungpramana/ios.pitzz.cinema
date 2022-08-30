@@ -3,4 +3,6 @@ use_frameworks!
 target 'Pitzz' do
   pod 'Alamofire'
   pod 'AlamofireNetworkActivityLogger'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 end

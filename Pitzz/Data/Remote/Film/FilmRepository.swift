@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+import RxSwift
 
 class FilmRepository {
     
@@ -16,13 +17,8 @@ class FilmRepository {
         self.mFilmService = filmService
     }
     
-    func discoverMovie(parameters: Parameters, completion: @escaping (AppResponseList<Film>?) -> ()) {
-        mFilmService.discoverMovie(parameters: parameters).responseDecodable(of: AppResponseList<Film>.self) { response in
-            guard let results = response.value else {
-                return completion(nil)
-            }
-            completion(results)
-        }
+    func discoverMovie(parameters: Parameters?) -> Observable<AppResponseList<Film>> {
+        return mFilmService.discoverMovie(parameters: parameters)
     }
     
 }

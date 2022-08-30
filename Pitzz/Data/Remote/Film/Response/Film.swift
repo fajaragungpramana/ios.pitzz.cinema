@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Film : Decodable {
+struct Film : Codable {
     var id: Int? = nil
     var posterPath: String? = nil
     var originalTitle: String? = nil
